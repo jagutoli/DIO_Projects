@@ -1,2 +1,5 @@
 # DIO_Projects
-To delivery of DIO project, education path
+To delivery DIO´s project, education path:
+Course: Excel with AI (Artificial Intelligence)
+Project 1: Create Investiment app control using Excel
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarroUsado - Plataforma de Veículos Usados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin-bottom: 10px;
+        }
+        
+        .search-bar {
+            background-color: #34495e;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .search-bar button:hover {
+            background-color: #c0392b;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .car-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .car-image {
+            width: 100%;
+            height: 200px;
+            background-color: #bdc3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+        }
+        
+        .car-info {
+            padding: 15px;
+        }
+        
+        .car-info h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .car-info p {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .car-price {
+            font-size: 18px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .car-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .car-button:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚗 CarroUsado</h1>
+        <p>Encontre o carro perfeito para você</p>
+    </header>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por marca, modelo...">
+        <button>Buscar</button>
+    </div>
+    
+    <div class="container">
+        <div class="cars-grid">
+            <div class="car-card">
+                <div class="car-image">Imagem do Carro</div>
+                <div class="car-info">
+                    <h3>Honda Civic 2018</h3>
+                    <p><strong>Marca:</strong> Honda</p>
+                    <p><strong>Ano:</strong> 2018</p>
+                    <p><strong>Km:</strong> 45.000</p>
+                    <p><strong>Combustível:</strong> Gasolina</p>
+                    <div class="car-price">R$ 65.000,00</div>
+                    <button class="car-button">Ver Detalhes</button>
+                </div>
+            </div>
+            
+            <div class="car-card">
+                <div class="car-image">Imagem do Carro</div>
+                <div class="car-info">
+                    <h3>Toyota Corolla 2019</h3>
+                    <p><strong>Marca:</strong> Toyota</p>
+                    <p><strong>Ano:</strong> 2019</p>
+                    <p><strong>Km:</strong> 32.000</p>
+                    <p><strong>Combustível:</strong> Gasolina</p>
+                    <div class="car-price">R$ 75.000,00</div>
+                    <button class="car-button">Ver Detalhes</button>
+                </div>
+            </div>
+            
+            <div class="car-card">
+                <div class="car-image">Imagem do Carro</div>
+                <div class="car-info">
+                    <h3>Volkswagen Gol 2017</h3>
+                    <p><strong>Marca:</strong> Volkswagen</p>
+                    <p><strong>Ano:</strong> 2017</p>
+                    <p><strong>Km:</strong> 58.000</p>
+                    <p><strong>Combustível:</strong> Gasolina</p>
+                    <div class="car-price">R$ 45.000,00</div>
+                    <button class="car-button">Ver Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 CarroUsado. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

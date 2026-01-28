@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de emissões de CO2 para diferentes modos de transporte">
+    <title>EcoTrip - Calculadora de CO2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title">🍃 EcoTrip - Calculadora de CO2</h1>
+            <p class="header__subtitle">Calcule a emissão de carbono da sua viagem e descubra o impacto ambiental do seu deslocamento</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Calculator Form -->
+            <form id="calculator-form" class="calculator__form">
+                <fieldset class="calculator__fieldset">
+                    <legend class="calculator__legend">Dados da Viagem</legend>
+
+                    <!-- Origin Input -->
+                    <div class="form-group">
+                        <label for="origin" class="form-group__label">Origem:</label>
+                        <input 
+                            type="text" 
+                            id="origin" 
+                            class="form-group__input" 
+                            placeholder="Digite a cidade de origem"
+                            list="cities-list"
+                            required
+                            aria-describedby="origin-help"
+                        >
+                        <datalist id="cities-list"></datalist>
+                    </div>
+
+                    <!-- Destination Input -->
+                    <div class="form-group">
+                        <label for="destination" class="form-group__label">Destino:</label>
+                        <input 
+                            type="text" 
+                            id="destination" 
+                            class="form-group__input" 
+                            placeholder="Digite a cidade de destino"
+                            list="cities-list"
+                            required
+                            aria-describedby="destination-help"
+                        >
+                    </div>
+
+                    <!-- Distance Input -->
+                    <div class="form-group">
+                        <label for="distance" class="form-group__label">Distância (km):</label>
+                        <input 
+                            type="number" 
+                            id="distance" 
+                            class="form-group__input" 
+                            placeholder="0"
+                            readonly
+                            min="0"
+                            step="0.1"
+                            aria-describedby="distance-help"
+                        >
+                        <small id="distance-help" class="form-group__helper">A distância será preenchida automaticamente</small>
+                    </div>
+
+                    <!-- Manual Distance Checkbox -->
+                    <div class="form-group form-group--checkbox">
+                        <input 
+                            type="checkbox" 
+                            id="manual-distance" 
+                            class="form-group__checkbox"
+                        >
+                        <label for="manual-distance" class="form-group__checkbox-label">Insira distância manualmente</label>
+                    </div>
+
+                    <!-- Transport Mode Selector -->
+                    <fieldset class="transport-selector">
+                        <legend class="transport-selector__legend">Modo de Transporte:</legend>
+                        <div class="transport-selector__grid">
+                            <div class="transport-option">
+                                <input 
+                                    type="radio" 
+                                    id="bicycle" 
+                                    name="transport" 
+                                    value="bicycle" 
+                                    class="transport-option__input"
+                                >
+                                <label for="bicycle" class="transport-option__label">
+                                    <span class="transport-option__emoji">🚴</span>
+                                    <span class="transport-option__text">Bicicleta</span>
+                                </label>
+                            </div>
+
+                            <div class="transport-option">
+                                <input 
+                                    type="radio" 
+                                    id="car" 
+                                    name="transport" 
+                                    value="car" 
+                                    class="transport-option__input"
+                                    checked
+                                >
+                                <label for="car" class="transport-option__label">
+                                    <span class="transport-option__emoji">🚗</span>
+                                    <span class="transport-option__text">Carro</span>
+                                </label>
+                            </div>
+
+                            <div class="transport-option">
+                                <input 
+                                    type="radio" 
+                                    id="bus" 
+                                    name="transport" 
+                                    value="bus" 
+                                    class="transport-option__input"
+                                >
+                                <label for="bus" class="transport-option__label">
+                                    <span class="transport-option__emoji">🚌</span>
+                                    <span class="transport-option__text">Ônibus</span>
+                                </label>
+                            </div>
+
+                            <div class="transport-option">
+                                <input 
+                                    type="radio" 
+                                    id="truck" 
+                                    name="transport" 
+                                    value="truck" 
+                                    class="transport-option__input"
+                                >
+                                <label for="truck" class="transport-option__label">
+                                    <span class="transport-option__emoji">🚚</span>
+                                    <span class="transport-option__text">Caminhão</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="calculator__submit">Calcule Emissão</button>
+                </fieldset>
+            </form>
+
+            <!-- Results Section -->
+            <section id="results" class="results hidden">
+                <h2 class="results__title">Resultado da Emissão</h2>
+                <div id="results-content" class="results__content"></div>
+            </section>
+
+            <!-- Comparison Section -->
+            <section id="comparison" class="comparison hidden">
+                <h2 class="comparison__title">Comparação de Transportes</h2>
+                <div id="comparison-content" class="comparison__content"></div>
+            </section>
+
+            <!-- Carbon Credits Section -->
+            <section id="carbon-credits" class="carbon-credits hidden">
+                <h2 class="carbon-credits__title">Compensação de Carbono</h2>
+                <div id="carbon-credits-content" class="carbon-credits__content"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">Desenvolvido com auxilio DIO | 🌱 Projeto GitHub Copilot</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/routes-data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

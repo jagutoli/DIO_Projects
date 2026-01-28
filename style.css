@@ -1,0 +1,479 @@
+/* ========================================
+   CSS Custom Properties (Design Tokens)
+   ======================================== */
+
+:root {
+    /* Color Palette - Eco-friendly */
+    --primary: #10b981;
+    --secondary: #059669;
+    --accent: #34d399;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #f3f4f6;
+
+    /* Text & Background */
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --bg: #f3f4f6;
+    --white: #ffffff;
+
+    /* Spacing Scale */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+    --radius-lg: 1rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+.header__container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.header__subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+
+.main {
+    padding: var(--spacing-lg) 0;
+}
+
+/* ========================================
+   Form Styling
+   ======================================== */
+
+.calculator__form {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
+    max-width: 600px;
+}
+
+.calculator__fieldset {
+    border: none;
+    padding: 0;
+}
+
+.calculator__legend {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group__label {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.form-group__input {
+    padding: var(--spacing-md);
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--white);
+    color: var(--text);
+}
+
+.form-group__input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-group__input:read-only {
+    background-color: var(--info);
+    cursor: not-allowed;
+}
+
+.form-group__input::placeholder {
+    color: var(--text-light);
+}
+
+.form-group__helper {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: var(--spacing-xs);
+    display: block;
+}
+
+/* Checkbox Group */
+.form-group--checkbox {
+    flex-direction: row;
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group__checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: var(--spacing-sm);
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.form-group__checkbox-label {
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ========================================
+   Transport Mode Selector
+   ======================================== */
+
+.transport-selector {
+    border: none;
+    padding: 0;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.transport-selector__legend {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.125rem;
+}
+
+.transport-selector__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.transport-option {
+    position: relative;
+}
+
+.transport-option__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.transport-option__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--white);
+    text-align: center;
+    min-height: 140px;
+}
+
+.transport-option__label:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.transport-option__emoji {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.transport-option__text {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+/* Radio button checked state */
+.transport-option__input:checked + .transport-option__label {
+    border-color: var(--primary);
+    border-width: 2px;
+    background-color: rgba(16, 185, 129, 0.05);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.transport-option__input:checked + .transport-option__label .transport-option__text {
+    color: var(--primary);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.calculator__submit {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: var(--spacing-lg);
+}
+
+.calculator__submit:hover:not(:disabled) {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.calculator__submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.calculator__submit:disabled {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ========================================
+   Results Sections
+   ======================================== */
+
+.results,
+.comparison,
+.carbon-credits {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
+    max-width: 600px;
+}
+
+.results__title,
+.comparison__title,
+.carbon-credits__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent);
+}
+
+.results__content,
+.comparison__content,
+.carbon-credits__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* ========================================
+   Spinner/Loading Animation
+   ======================================== */
+
+.spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(16, 185, 129, 0.2);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 767px) {
+    .header__title {
+        font-size: 1.5rem;
+    }
+
+    .calculator__form {
+        padding: var(--spacing-lg);
+    }
+
+    .calculator__legend {
+        font-size: 1.25rem;
+    }
+
+    .transport-selector__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .transport-option__label {
+        min-height: 120px;
+        padding: var(--spacing-md);
+    }
+
+    .transport-option__emoji {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: var(--spacing-xl);
+    }
+
+    .transport-selector__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .transport-option__label {
+        min-height: 150px;
+    }
+
+    .header__title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ========================================
+   Focus & Accessibility
+   ======================================== */
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    .hidden {
+        display: none !important;
+    }
+
+    body {
+        background: var(--white);
+    }
+
+    .calculator__form {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+}
